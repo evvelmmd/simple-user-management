@@ -36,8 +36,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 //Tokeni STATELESS olaraq saxla
                         sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
 
-        http.headers().frameOptions().disable();
-        http.authorizeRequests().antMatchers("/**").hasIpAddress("185.40.179.149").anyRequest().authenticated();
+//        http.headers().frameOptions().disable();
+//        http.authorizeRequests().antMatchers("/**").hasIpAddress("185.40.179.149").anyRequest().authenticated();
     }
 
 
