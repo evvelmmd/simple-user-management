@@ -61,9 +61,8 @@ public class UserController {
     };
 
     public static String getRequestIP(HttpServletRequest request) {
-        String value = null;
         for (String header: IP_HEADERS) {
-            value = request.getHeader(header);
+            String value = request.getHeader(header);
             if (value == null || value.isEmpty()) {
                 continue;
             }
@@ -71,7 +70,7 @@ public class UserController {
 
         return value;
     }
-        return " ";
+        return request.getRemoteAddr();
 }
 
 }
