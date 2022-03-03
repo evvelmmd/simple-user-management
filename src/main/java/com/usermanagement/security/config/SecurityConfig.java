@@ -37,7 +37,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                         sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
 
 //        http.headers().frameOptions().disable();
-//        http.authorizeRequests().antMatchers("/**").hasIpAddress("185.40.179.149").anyRequest().authenticated();
+//        http.authorizeRequests().antMatchers("/**").hasIpAddress("185.40.179.0/150").anyRequest().authenticated();
     }
 
 

@@ -24,3 +24,4 @@ public class AuthenticationController {
         return "Token: " + authenticationService.createAuthenticationToken(userSignInDTO);
     }
 }
+
