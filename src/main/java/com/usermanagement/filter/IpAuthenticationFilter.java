@@ -22,9 +22,6 @@ public class IpAuthenticationFilter extends OncePerRequestFilter {
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
         String userIp = request.getRemoteAddr();
 
-        if(! Arrays.asList(whitelist).contains(userIp)){
-            throw new BadCredentialsException("Invalid IP Address");
-        }
         filterChain.doFilter(request, response);
     }
 }
