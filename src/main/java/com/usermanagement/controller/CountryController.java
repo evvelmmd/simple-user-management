@@ -36,12 +36,12 @@ public class CountryController {
     }
 
     @PutMapping("/{countryName}")
-    public void updateCountry(@PathVariable("countryName") String countryName, @RequestParam String newName) {
-        countryService.updateCountry(countryName, newName);
+    public void updateCountry(@PathVariable("countryName") int countryId, @RequestParam String newName) {
+        countryService.updateCountry(countryId, newName);
     }
 
-    @DeleteMapping ("/{countryName}")
-    public void deleteCountry(@PathVariable String countryName) {
-        countryService.deleteCountry(countryName);
+    @DeleteMapping ("/{countryId}")
+    public void deleteCountry(@PathVariable int countryId) {
+        countryService.deleteCountry(countryId);
     }
 }

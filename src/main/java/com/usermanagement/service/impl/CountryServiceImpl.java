@@ -40,15 +40,15 @@ public class CountryServiceImpl implements CountryService {
     }
 
     @Override
-    public void updateCountry(String countryName, String newName) {
-        CountryEntity countryEntity = countryRepository.getCountryEntitiesByName(countryName);
+    public void updateCountry(int countryId, String newName) {
+        CountryEntity countryEntity = countryRepository.getById(countryId);
         countryEntity.setName(newName);
         countryRepository.save(countryEntity);
     }
 
     @Override
-    public void deleteCountry(String countryName) {
-        CountryEntity countryEntity = countryRepository.getCountryEntitiesByName(countryName);
+    public void deleteCountry(int countryId) {
+        CountryEntity countryEntity = countryRepository.getById(countryId);
         countryRepository.delete(countryEntity);
     }
 }

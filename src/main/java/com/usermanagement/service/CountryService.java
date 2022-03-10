@@ -12,7 +12,7 @@ public interface CountryService {
 
     List<CountryDTO> getAllCountries();
 
-    void updateCountry(String countryName, String newName);
+    void updateCountry(int countryId, String newName);
 
-    void deleteCountry(String countryName);
+    void deleteCountry(int countyId);
 }
