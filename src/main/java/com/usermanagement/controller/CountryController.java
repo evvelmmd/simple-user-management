@@ -35,8 +35,8 @@ public class CountryController {
         countryService.addCity(cityName, countryName);
     }
 
-    @PutMapping("/{countryName}")
-    public void updateCountry(@PathVariable("countryName") int countryId, @RequestParam String newName) {
+    @PutMapping("/{countryId}")
+    public void updateCountry(@PathVariable("countryId") int countryId, @RequestParam String newName) {
         countryService.updateCountry(countryId, newName);
     }
 
