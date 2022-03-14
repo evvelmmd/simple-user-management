@@ -19,7 +19,7 @@ public interface CountryMapper {
 
     @Mappings({
             @Mapping(target = "name", source = "name"),
-            @Mapping(target = "cities", source = "cities"),
+            @Mapping(target = "id", source = "id")
     })
     CountryDTO entityToDTO(CountryEntity countryEntity);
 

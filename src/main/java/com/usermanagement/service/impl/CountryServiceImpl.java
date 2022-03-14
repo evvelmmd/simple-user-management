@@ -3,6 +3,7 @@ package com.usermanagement.service.impl;
 import com.usermanagement.entity.CityEntity;
 import com.usermanagement.entity.CountryDTO;
 import com.usermanagement.entity.CountryEntity;
+import com.usermanagement.mapper.CityMapper;
 import com.usermanagement.mapper.CountryMapper;
 import com.usermanagement.repository.CityRepository;
 import com.usermanagement.repository.CountryRepository;
@@ -27,8 +28,8 @@ public class CountryServiceImpl implements CountryService {
     }
 
     @Override
-    public void addCity(String cityName, String countryName) {
-        CountryEntity countryEntity = countryRepository.getCountryEntitiesByName(countryName);
+    public void addCity(String cityName, Integer countryId) {
+        CountryEntity countryEntity = countryRepository.findById(countryId).get();
         CityEntity cityEntity = CityEntity.builder().name(cityName).country(countryEntity).build();
 
         cityRepository.save(cityEntity);
@@ -45,10 +46,28 @@ public class CountryServiceImpl implements CountryService {
         countryEntity.setName(newName);
         countryRepository.save(countryEntity);
     }
+    @Override
+    public void updateCity(int cityId,String newName){
+        CityEntity cityEntity = cityRepository.getById(cityId);
+        cityEntity.setName(newName);
+        cityRepository.save(cityEntity);
+    }
 
     @Override
     public void deleteCountry(int countryId) {
         CountryEntity countryEntity = countryRepository.getById(countryId);
         countryRepository.delete(countryEntity);
+    }
+
+    @Override
+    public void deleteCity(int cityId) {
+
+        CityEntity cityEntity = cityRepository.getById(cityId);
+        cityRepository.delete(cityEntity);
+    }
+
+    @Override
+    public List<CityEntity> getCitiesByCountry(Integer countryId) {
+        return CityMapper.INSTANCE.toDtoWithoutCountry(cityRepository.getAllCitiesByCountryId(countryId));
     }
 }

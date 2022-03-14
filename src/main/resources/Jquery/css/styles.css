@@ -1,0 +1,8 @@
+body {background-color: powderblue;}
+
+.index {width: 300px;
+height: 90px; margin-left: 600px;margin-top: 50px;}
+.create{margin-top: 5px;margin-left: 5px;}
+.add{ height: 40px;text-align: center; margin-left: 5px; width: 140px;}
+.input1{margin-left: 70px;margin-top: 100px;}
+.input2{margin-left: 70px;margin-top: 40px; }
